@@ -1,25 +1,56 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const links = [
-  ["Menu", "/#Menu"],
-  ["Nutritional", "/#Nutritional"],
-  ["Careers", "/#Careers"],
-  ["Locations", "/#Locations"],
-  ["Contact", "/#Contact"],
-].map((cur) => (
-  <li key={cur[0]}>
-    <a className="Link" href={cur[1]}>
-      {cur[0]}
-    </a>
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function Profile() {
+  return <h2>Profile</h2>;
+}
+
+function Threads() {
+  return <h2>Threads</h2>;
+}
+
+const data = [
+  {
+    URI:"/",
+    TXT:"Home",
+    isExact: true,
+  },
+  {
+    URI:"/profile/",
+    TXT:"Profile",
+  },
+  {
+    URI:"/threads/",
+    TXT:"Threads",
+  },
+];
+
+const Links = data.map(({URI, TXT}) => (
+  <li>
+    <Link to={URI} >{TXT}</Link>
   </li>
 ));
 
-export default function Navbar(props) {
+const Routes = data.map(({URI, TXT, isExact}) => (
+  <Route path={URI} {...(isExact)? 'exact': undefined} component={TXT} />
+));
+
+
+export default function Navbar() {
   return (
-    <nav className="Navbar" {...props}>
-      <ul>
-        {links}
-      </ul>
-    </nav>
+    <Router>
+      <div>
+        <nav className="Navbar">
+          <ul>
+            {Links}
+          </ul>
+        </nav>
+        {Routes}
+      </div>
+    </Router>
   );
-}
+};
