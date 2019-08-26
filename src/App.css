@@ -1,26 +1,106 @@
+/*
+flex containers
+  flex is for how to grow or shrink to fit in it's container
+  flex-containers direct children are flex items
+  Set display to:
+    flex,
+    inline-flex,
+  set flex as Shorthand for: flex-grow flex-shrink flex-basis.
+    flex-grow: grow along the main axis from their flex-basis
+    flex-shrink: shrink
+    flex-basis: size of that item's space left as available
+      Set flex to one of:
+        auto,
+        initial,
+        none,
+        a pos unitless num,
+  flex-flow as Shorthand for: flex-direction flex-wrap
+    flex-direction: Main axis direction
+      row,
+      row-reverse,
+      column,
+      column-reverse,
+    flex-wrap: wrap to more axis when overflowed
+      wrap,
+      nowrap,
+    global:
+      inherit,
+      initial,
+      unset,
+flex items
+    A flex item does shrink below set min-width or min-height
+    we can target items directly or inherit
+    hsl(210, 50%, 50%);
+    hsl(180, 50%, 50%);
+    hsl(150, 50%, 50%);
+    hsl(120, 50%, 50%);
+    hsl(90, 50%, 50%);
+    hsl(60, 50%, 50%);
+    hsl(30, 50%, 50%);
+*/
+
 .App {
+  display: flex;
+  flex: 0 1 100vh;
+  min-width: 100vh;
+  min-height: 100vh;
+  background-color: hsl(160, 50%, 80%);
+  font-size: calc(10px + 2vmin);
+  color: hsl(30, 50%, 50%);
+}
+
+.App * {
+  border: thick double hsl(330, 50%, 50%);
+  border-spacing: 5px 1rem;
+  padding:0;
+  margin:0;
+}
+.Main {
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
+.Logo {
+  display: inline-block;
+  float: left;
+  min-height: 10vmin;
+  max-height: 40vmin;
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar {
+  min-height: 10vmin;
+  max-height: 40vmin;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Navbar > ul {
+  display: flex;
+  flex: 1 1 100px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  list-style-type:none;
+}
+.Navbar > ul > li {
+  border: thick double hsl(330, 50%, 50%);
+  border-spacing: 5px 1rem;
+  color: hsl(300, 50%, 50%);
+}
+.Sidebar {
+  display: inline-block;
+  float: left;
+  width: 3vh;
+}
+.Header {
+  font-size: calc(10px + 3vmin);
+  color: hsl(360, 50%, 50%);
+}
+
+.Link {
+  color: hsl(270, 100%, 50%);
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +110,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Footer {
+  color: hsl(240, 50%, 50%);
 }
