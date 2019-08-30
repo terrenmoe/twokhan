@@ -3,7 +3,9 @@ import React from 'react';
 import logo from './logo.svg';
 import Sidebar from './Sidebar.js';
 import Navbar from './Navbar.js';
-// import Footer from './Footer.js';
+import Footer from './Footer.js';
+import Avatar from './Avatar.js';
+
 import './App.css';
 
 export default function App() {
@@ -13,8 +15,10 @@ export default function App() {
         <img src={logo} className="Logo" alt="logo" />
         <h2>2khan.org</h2>
         <Navbar />
-      <Sidebar id="left" className="Sidebar" />
+        <Sidebar id="left" className="Sidebar" />
       </header>
+      <Avatar></Avatar>
+      <Footer></Footer>
     </div>
   );
 };
