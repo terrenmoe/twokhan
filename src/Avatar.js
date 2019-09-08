@@ -5,7 +5,7 @@ import { string, object } from 'prop-types'
 import EntryBox from './EntryBox'
 
 // Use decorators if needed
-@observer
+
 class Avatar extends Component {
   state = { entered: false }
   // Initialize state here (ES7) or in a constructor method (ES6)
@@ -63,4 +63,5 @@ class Avatar extends Component {
     )
   }
 }
-export default Avatar
+
+export default observer(Avatar)

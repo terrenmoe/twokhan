@@ -1,5 +1,10 @@
 import React from 'react';
+import { string } from 'prop-types'
 
-export default function Main(props) {
-  return (<main className='Main'>{props.children}</main>);
+Main.propTypes = {
+  classMixin: string
+};
+
+export default function Main({classMixin, children}) {
+  return (<main className={`Main ${classMixin}`}>{children}</main>);
 };

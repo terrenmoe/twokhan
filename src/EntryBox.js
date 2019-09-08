@@ -5,12 +5,12 @@ import { func, bool } from 'prop-types'
 // You want these to be as visible as possible
 EntryBox.propTypes = {
   onSubmit: func.isRequired,
-  expanded: bool,
-  onExpand: func.isRequired
+  entered: bool,
+  onEntry: func.isRequired
 }
 
 // destro props and use default args in setting defaultProps
-function EntryBox({ onEntry, entered = false, children, onSubmit }) {
+function EntryBox({ onEntry, entered = false, onSubmit, children }) {
   const formStyle = entered ? { display:"none" } : { display:"flex" }
   return (
     <form style={formStyle} onSubmit={onSubmit}>

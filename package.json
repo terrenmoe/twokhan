@@ -20,7 +20,9 @@
     "extends": "react-app"
   },
   "babel": {
-    "presets": [ "mobx" ]
+    "presets": [
+      "mobx"
+    ]
   },
   "browserslist": {
     "production": [
@@ -34,6 +36,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage" : "http://myname.github.io/twokhan",
   "devDependencies": {
     "babel-preset-mobx": "^2.0.0"
   }

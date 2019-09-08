@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+import ListItem from './ListItem.js'
+
 function Home() {
   return <h2>Home</h2>;
 }
@@ -15,28 +17,29 @@ function Threads() {
 
 const data = [
   {
-    URI:"/",
-    TXT:"Home",
+    uri: "/",
+    txt: "Home",
+    view: Home,
     isExact: true,
   },
   {
-    URI:"/profile/",
-    TXT:"Profile",
+    uri: "/profile/",
+    txt: "Profile",
+    view: Profile,
   },
   {
-    URI:"/threads/",
-    TXT:"Threads",
+    uri: "/threads/",
+    txt: "Threads",
+    view: Threads,
   },
 ];
 
-const Links = data.map(({URI, TXT}) => (
-  <li>
-    <Link to={URI} >{TXT}</Link>
-  </li>
+const Links = data.map(({uri, txt}) => (
+  ListItem(<Link key={txt} to={uri} >{txt}</Link>)
 ));
 
-const Routes = data.map(({URI, TXT, isExact}) => (
-  <Route path={URI} {...(isExact)? 'exact': undefined} component={TXT} />
+const Routes = data.map(({uri, view, isExact}) => (
+  <Route exact={isExact} path={uri} component={view} />
 ));
 
 
