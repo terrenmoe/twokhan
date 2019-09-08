@@ -1,0 +1,17 @@
+.Logo {
+  float: left;
+  min-height: 10vmin;
+  max-height: 40vmin;
+  animation: App-logo-spin infinite 15s linear;
+  pointer-events: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

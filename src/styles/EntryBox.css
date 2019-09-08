@@ -1,0 +1,10 @@
+.EntryBox {
+  color: white;
+  margin: 0.5em;
+  min-height: 200px;
+  flex: 0 1 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

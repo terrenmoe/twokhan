@@ -1,0 +1,13 @@
+.Link {
+  box-shadow: -0.1em -0.1em 1px 0 rgba(128, 128, 128, 1);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 247, 0, 0.5), rgba(0, 255, 247, 0.5));
+  transform: rotate(12deg);
+  transition: transform 1s;
+  text-shadow: -0.1em -0.1em rgba(0, 0, 0, 0.5);
+}
+
+.Link:active,
+.Link:hover {
+  outline-width: 0;
+  transform: rotate(-12deg);
+}

@@ -1,0 +1,60 @@
+.App {
+  flex: 0 1 100vh;
+  min-width: 10vmin;
+  min-height: 10vmin;
+  background: radial-gradient(
+    hsl(160, 100%, 30%),
+    hsl(190, 100%, 30%)
+  );
+  font-size: calc(0.8em + 2vmin);
+  color: hsl(130, 50%, 50%);
+}
+
+.App > * {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 10vmin;
+  padding: 1%;
+}
+
+.App > *:nth-of-type( 2n+1 ) {
+  color: hsla(190, 100%, 30%, 0.3);
+  background: repeating-radial-gradient(
+    hsla(130, 100%, 30%, 0.3),
+    50%,
+    hsla(160, 100%, 30%, 0.3)
+  );
+}
+
+.App > *:nth-of-type( 2n ) {
+  color: hsla(220, 100%, 30%, 0.3);
+  background: repeating-radial-gradient(
+    hsla(70, 100%, 30%, 0.3),
+    50%,
+    hsla(100, 100%, 30%, 0.3)
+  );
+}
+
+.App > *:nth-of-type( 1 ) {
+  /* box-shadow: -0.1em -0.1em 1em 0  grey; */
+}
+
+.App > *:nth-of-type( even ) {
+  color: hsla(250, 100%, 30%, 0.3);
+  background: repeating-radial-gradient(
+    hsla(10, 100%, 30%, 0.3),
+    50%,
+    hsl(40, 100%, 30%, 0.3)
+  );
+}
+
+@import './Avatar.css';
+@import './EntryBox.css';
+@import './Footer.css';
+@import './LinkItem.css';
+@import './Logo.css';
+@import './Main.css';
+@import './Navbar.css';
+@import './Sidebar.css';
+@import './Header.css';
+/* @import "./"; */
